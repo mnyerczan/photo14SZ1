@@ -4,7 +4,7 @@
  */
 function getConfig( $confFile )
 {
-    return json_decode(file_get_contents($confFile), TRUE)['databaseConnect'];
+    return json_decode( file_get_contents( $confFile ), TRUE )['databaseConnect'];
 }
 
 /**
@@ -22,9 +22,9 @@ function getConnection( array $config )
 
         return $pdo;
     } 
-    catch (PDOException $p) 
+    catch ( PDOException $e ) 
     {
-        var_dump( $e->getMesage() );
+        var_dump( $e->getMessage() );
         die;
     }
 }
@@ -47,7 +47,7 @@ function getPhotos( PDO $pdo )
     } 
     catch (PDOException $e) 
     {        
-        var_dump( $e->errorInfo );
+        var_dump( $e->getMessage() );
     }
 }
 
@@ -58,20 +58,20 @@ function uploadDatas( PDO $pdo, array $photo)
 {
     try
     {
-        $statement = $pdo->prepare( 'INSERT INTO `photos` (`thumbnail`,`url`,`title`) VALUES ( ?, ?, ? ) ' );
+        $statement = $pdo->prepare( 'INSERT INTO `photos` (`thumbnail`,`url`,`title`) VALUES ( ?, ?, ? )' );
 
-        $statement->bindParam(1, $photo['thumbnail']);
-        $statement->bindParam(2, $photo['url']);
-        $statement->bindParam(3, $photo['title']);
+        $statement->bindParam( 1, $photo['thumbnail'] );
+        $statement->bindParam( 2, $photo['url'] );
+        $statement->bindParam( 3, $photo['title'] );
 
         if ( !$statement->execute() )
         {
             throw new PDOException( $statement->errorInfo()[2] );
         }
 
-        header('Location: index.php');
+        header( 'Location: index.php' );
     } 
-    catch (PDOException $e) 
+    catch ( PDOException $e ) 
     {           
         header('refresh:2; url=index.php?page=upload');
         print "Error while upload file...";
@@ -87,7 +87,7 @@ function getPhoto( PDO $pdo, $id )
     {
         $statement = $pdo->prepare( 'SELECT * FROM `photos` WHERE `id` = ?' );
 
-        $statement->bindParam(1, $id);
+        $statement->bindParam( 1, $id );
 
         if ( !$statement->execute() )
         {
@@ -96,9 +96,9 @@ function getPhoto( PDO $pdo, $id )
 
         return $statement->fetchAll()[0];
     } 
-    catch (PDOException $e) 
+    catch ( PDOException $e ) 
     {        
-        var_dump( $e->errorInfo );
+        var_dump( $e->getMessage() );
     }
 
     return FALSE;

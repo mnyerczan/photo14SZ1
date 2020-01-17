@@ -3,15 +3,15 @@
 /**
  * GET DATAS OF DATABASE CONFIG
  */
-    $config = getConfig($confFile);
+    $config = getConfig( $confFile );
 
 /**
  * OPEN DATABASE CONNETCION
  */
-    $pdo = getConnection($config);
+    $pdo = getConnection( $config );
 
 /**
  * GET PHOTOS
  */
-    $photos = getPhotos($pdo);
+    $photos = getPhotos( $pdo );
 

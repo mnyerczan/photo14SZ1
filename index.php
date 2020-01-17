@@ -1,5 +1,5 @@
 <?php    
-    define('APPPATH', 'Application/');
+    define( 'APPPATH', 'Application/' );
     $page = @$_GET['page'] ? $_GET['page'] : 'photos';
     
     require_once APPPATH.'functions.php';
@@ -10,7 +10,7 @@
 
 
 // ROUTING
-    switch($page)
+    switch ( $page )
     {
         case 'photos' : require_once APPPATH.'Core/photos.php';   break;
         case 'photo' :  require_once APPPATH.'Core/photo.php';    break; 
@@ -32,11 +32,11 @@
     
     <?php 
     
-    switch($page)
+    switch ( $page )
     {
-        case 'photos': require_once APPPATH.'Templates/photosView.php';     break;
+        case 'photos': require_once APPPATH.'Templates/photosView.php';    break;
         case 'photo': require_once APPPATH.'Templates/photoView.php';      break;
-        case 'upload': require_once APPPATH.'Templates/photoFormView.php';  break;
+        case 'upload': require_once APPPATH.'Templates/photoFormView.php'; break;
     }
     
     ?>

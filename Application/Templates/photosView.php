@@ -1,5 +1,5 @@
 <main class="photos">
-    <?php foreach ($photos as $photo): ?>
+    <?php foreach ( $photos as $photo ): ?>
     <a href="index.php?page=photo&id=<?=$photo['id']?>">
     <img 
         src="<?=$photo['thumbnail']?>" 
