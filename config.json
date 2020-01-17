@@ -1,0 +1,8 @@
+{
+    "databaseConnect" : {
+        "userName" : "mnyerczans",
+        "password" : "87TrFd",
+        "hostName" : "winsql.vereb.dc",
+        "databaseName" : "mnyerczans"
+    }
+}

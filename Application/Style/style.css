@@ -1,0 +1,40 @@
+body{
+    margin:0;
+}
+.header{
+    padding: 20px;
+    background-color: black;
+    font-size: 24px;
+}
+.header a{
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+}
+.photos{
+    width: 1000px;
+    margin: 50px auto;
+}
+.fieldset{
+    width: 200px;
+    display: table; 
+    margin: 50px auto;
+    border: 1px solid rgb(5, 5, 66);
+    border-radius: 10px;
+    padding: 20px;
+}
+.fieldset label{
+    font-size: 12px;
+    display: block;
+}
+.fieldset input[type="text"]{
+    border: none;
+    border-bottom: 1px solid blue;
+}
+.btn{
+    padding: 2px 20px;
+    background-color: green;
+    border-radius: 5px;
+    margin: 10px 0;
+    color: white;
+}
