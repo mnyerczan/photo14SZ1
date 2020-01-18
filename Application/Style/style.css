@@ -21,7 +21,7 @@ body{
     margin: 50px auto;
     border: 1px solid rgb(5, 5, 66);
     border-radius: 10px;
-    padding: 20px;
+    padding: 40px;
 }
 .fieldset label{
     font-size: 12px;
@@ -29,6 +29,10 @@ body{
 }
 .fieldset input[type="text"]{
     border: none;
+    border-bottom: 1px solid gray;
+    margin:10px 0;
+}
+.fieldset input[type="text"]:focus{
     border-bottom: 1px solid blue;
 }
 .btn{

@@ -2,7 +2,7 @@
     <legend>Add photo</legend>
     <form action="index.php?page=add" method="POST">
         <label for="thumbnail">thumbnail</label>
-        <input type="text" name="thumbnail" id="thumbnail" size="30">
+        <input type="text" name="thumbnail" id="thumbnail" size="30" autofocus>
         <br>
         <label for="url">url</label>
         <input type="text" name="url" id="url" size="30">

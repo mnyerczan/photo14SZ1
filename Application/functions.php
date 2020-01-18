@@ -45,7 +45,7 @@ function getPhotos( PDO $pdo )
 
         return $statement->fetchAll();
     } 
-    catch (PDOException $e) 
+    catch ( PDOException $e )
     {        
         var_dump( $e->getMessage() );
     }
@@ -58,7 +58,7 @@ function uploadDatas( PDO $pdo, array $photo)
 {
     try
     {
-        $statement = $pdo->prepare( 'INSERT INTO `photos` (`thumbnail`,`url`,`title`) VALUES ( ?, ?, ? )' );
+        $statement = $pdo->prepare( 'INSERT INTO `photos` ( `thumbnail`,`url`,`title` ) VALUES ( ?, ?, ? )' );
 
         $statement->bindParam( 1, $photo['thumbnail'] );
         $statement->bindParam( 2, $photo['url'] );

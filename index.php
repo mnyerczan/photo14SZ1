@@ -26,6 +26,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Photo</title>
     <link rel="stylesheet" href="<?=APPPATH?>Style/style.css">
+    <!-- <link rel="shortcut icon" type="image/png" href="https://www.pngitem.com/pimgs/m/62-622054_camera-favicon-ico-movie-favicon-hd-png-download.png" /> -->
 </head>
 <body>
     <?php require_once APPPATH.'Templates/headerView.php' ?>
@@ -34,9 +35,9 @@
     
     switch ( $page )
     {
-        case 'photos': require_once APPPATH.'Templates/photosView.php';    break;
-        case 'photo': require_once APPPATH.'Templates/photoView.php';      break;
-        case 'upload': require_once APPPATH.'Templates/photoFormView.php'; break;
+        case 'photos':  require_once APPPATH.'Templates/photosView.php';    break;
+        case 'photo':   require_once APPPATH.'Templates/photoView.php';     break;
+        case 'upload':  require_once APPPATH.'Templates/photoFormView.php'; break;
     }
     
     ?>

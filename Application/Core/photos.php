@@ -15,3 +15,7 @@
  */
     $photos = getPhotos( $pdo );
 
+/**
+ * CLOSE CONNECTION
+ */
+   $pdo = null;
