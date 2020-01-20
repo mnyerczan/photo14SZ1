@@ -10,6 +10,6 @@
         <label for="title">title</label>
         <input type="text" name="title" id="title">
         <br>
-        <input class="btn" type="submit" name="new-submit" value="submit">
+        <input class="btn green" type="submit" name="new-submit" value="submit">
     </form>
 </fieldset>

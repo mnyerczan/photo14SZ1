@@ -94,12 +94,55 @@ function getPhoto( PDO $pdo, $id )
             throw new PDOException( $statement->errorInfo()[2] );
         }
 
-        return $statement->fetchAll()[0];
+        return $statement->fetch();
     } 
     catch ( PDOException $e ) 
     {        
         var_dump( $e->getMessage() );
     }
 
+    return FALSE;
+}
+
+function uploadTitle( PDO $pdo, array $photo )
+{
+    try
+    {
+        $statement = $pdo->prepare( 'UPDATE `photos` SET `title` = ? WHERE `id` = ?' );
+
+        $statement->bindParam( 1, $photo['title'] );
+        $statement->bindParam( 2, $photo['id'] );
+
+        if ( !$statement->execute() )
+        {
+            throw new PDOException( $statement->errorInfo()[2] );
+        }
+        return TRUE;
+    } 
+    catch ( PDOException $e ) 
+    {        
+        var_dump( $e->getMessage() );
+    }
+    return FALSE;
+}
+
+function delete( PDO $pdo, $id )
+{
+    try
+    {
+        $statement = $pdo->prepare( 'DELETE FROM `photos` WHERE `id` = ?' );
+     
+        $statement->bindParam( 1, $id);
+
+        if ( !$statement->execute() )
+        {
+            throw new PDOException( $statement->errorInfo()[2] );
+        }
+        return TRUE;
+    } 
+    catch ( PDOException $e ) 
+    {        
+        var_dump( $e->getMessage() );
+    }
     return FALSE;
 }

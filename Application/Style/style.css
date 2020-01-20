@@ -15,6 +15,9 @@ body{
     width: 1000px;
     margin: 50px auto;
 }
+.photos img{
+    width: 300px;
+}
 .fieldset{
     width: 200px;
     display: table; 
@@ -37,8 +40,33 @@ body{
 }
 .btn{
     padding: 2px 20px;
-    background-color: green;
     border-radius: 5px;
     margin: 10px 0;
     color: white;
+}
+.green{
+    background-color: green;
+}
+.red{
+    background-color: darkred;
+}
+.main-photo img{
+    display: block;
+    width: 1000px;
+    float: left;
+}
+.main-photo{
+    width: 1400px;
+    margin: 50px auto;
+    background-color: green;
+}
+#update-section{
+    width: 360px;
+    float: right;
+}
+#update-section label{
+    display: block;
+}
+#update-section table{
+    line-height: 40px;
 }
